@@ -14,12 +14,13 @@ Plugin 'FuzzyFinder'
 Plugin 'pangloss/vim-javascript'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
+Plugin 'mtth/scratch.vim'
 
 call vundle#end()
 filetype plugin indent on
 
 nmap <silent> <leader>f :FufFile **/<CR>
-nmap <silent> <leader>E :FufFile<CR>
 nmap <silent> <leader>b :FufBuffer<CR>
 
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -60,7 +61,6 @@ syntax enable
 
 colorscheme blackboard
 " filetype on
-au BufNewFile,BufRead *.jsm set filetype=javascript
 
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
@@ -71,11 +71,11 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
-let g:fuf_file_exclude = '\v^build|^src-cov|^archive|^node_'
 
-nmap <C-]> :TernDef<CR>
-imap <C-]> <Esc>:TernDef<CR>
-nmap <silent> <leader>rn :TernRename<CR>
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+let g:tern_show_signature_in_pum=1
+let g:tern_request_timeout=3
 
 " first, enable status line always
 set laststatus=2
@@ -100,3 +100,10 @@ nnoremap <c-l> <c-w>l
 set exrc
 set secure
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

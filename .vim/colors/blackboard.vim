@@ -51,7 +51,7 @@ hi Search guifg=NONE guibg=#1C3B79 guisp=#1C3B79 gui=NONE ctermfg=NONE ctermbg=6
 hi Statement guifg=#ffd900 guibg=NONE guisp=NONE gui=NONE ctermfg=220 ctermbg=NONE cterm=NONE
 "hi SpellRare -- no settings --
 "hi EnumerationValue -- no settings --
-hi Comment guifg=#afafaf guibg=NONE guisp=NONE gui=NONE ctermfg=145 ctermbg=NONE cterm=NONE
+hi Comment guifg=#afafaf guibg=NONE guisp=NONE gui=NONE ctermfg=240 ctermbg=NONE cterm=NONE
 hi Character guifg=#cbff1e guibg=NONE guisp=NONE gui=NONE ctermfg=190 ctermbg=NONE cterm=NONE
 "hi Float -- no settings --
 hi Float guifg=#d9ff00 guibg=NONE guisp=NONE gui=NONE ctermfg=190 ctermbg=NONE cterm=NONE
