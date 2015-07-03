@@ -16,6 +16,10 @@ Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'mtth/scratch.vim'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'heavenshell/vim-jsdoc'
+"Plugin 'tpope/vim-surround'
+"Plugin 'Townk/vim-autoclose'
 
 call vundle#end()
 filetype plugin indent on
@@ -44,7 +48,7 @@ set smarttab
 set expandtab
 
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:>.,trail:_,extends:#,nbsp:_
 
 
 set showmatch
@@ -74,8 +78,8 @@ map <right> <nop>
 
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
-let g:tern_show_signature_in_pum=1
 let g:tern_request_timeout=3
+let g:tern_show_signature_in_pum=1
 
 " first, enable status line always
 set laststatus=2
@@ -86,24 +90,29 @@ if version >= 700
   au InsertLeave * hi StatusLine ctermfg=15 ctermbg=245
 endif
 
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
+set foldmethod=indent "syntax
+set foldnestmax=2
 set foldlevel=1
+"set foldcolumn=4
+"set nofoldenable
 
 
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+"nnoremap <c-j> <c-w>j
+"nnoremap <c-k> <c-w>k
+"nnoremap <c-h> <c-w>h
+"nnoremap <c-l> <c-w>l
 
 set exrc
 set secure
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+
+
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
