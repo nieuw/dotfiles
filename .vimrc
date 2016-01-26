@@ -18,6 +18,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'mtth/scratch.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'mustache/vim-mustache-handlebars'
 "Plugin 'tpope/vim-surround'
 "Plugin 'Townk/vim-autoclose'
 
@@ -113,9 +114,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_html_checkers = ['tidy']
 
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
 let g:jsdoc_default_mapping = 0
+
 
 nmap <silent> <leader>d :JsDoc<CR>
