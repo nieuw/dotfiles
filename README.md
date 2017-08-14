@@ -20,3 +20,4 @@ Will add the how and why later. But this basically holds my user config for unix
 | ctrl-a :          | prompt                            |
 | ctrl-a s          | split pane horizontally           |
 | ctrl-a v          | split pane vertically             |
+| ctrl-a z          | zoom/unzoom current pane          |
