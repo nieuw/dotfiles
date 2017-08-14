@@ -12,6 +12,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'gorodinskiy/vim-coloresque'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
@@ -19,6 +20,7 @@ Plugin 'mtth/scratch.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'neo4j-contrib/cypher-vim-syntax'
 "Plugin 'tpope/vim-surround'
 "Plugin 'Townk/vim-autoclose'
 
@@ -71,10 +73,10 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " undo my n00bieness
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 
 let g:tern_map_keys=1
@@ -114,7 +116,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-let g:syntastic_javascript_checkers = ['jshint']
+"let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_html_checkers = ['tidy']
 
 let g:jsdoc_allow_input_prompt = 1
@@ -123,3 +125,21 @@ let g:jsdoc_default_mapping = 0
 
 
 nmap <silent> <leader>d :JsDoc<CR>
+
+"osx term map
+nmap <Esc>[1;5A <C-Up>
+nmap <Esc>[1;5B <C-Down>
+nmap <Esc>[1;5C <C-Right>
+nmap <Esc>[1;5D <C-Left>
+
+"tmux term map
+nmap <Esc>[A <C-Up>
+nmap <Esc>[B <C-Down>
+nmap <Esc>[C <C-Right>
+nmap <Esc>[D <C-Left>
+
+nmap <C-Up> :res +15<CR>
+nmap <C-Down> :res -15<CR>
+nmap <C-Right> :vertical resize +25<CR>
+nmap <C-Left> :vertical resize -25<CR>
+
