@@ -20,7 +20,7 @@ Plugin 'mtth/scratch.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'neo4j-contrib/cypher-vim-syntax'
+"Plugin 'nyanhan/requirejs.vim'
 "Plugin 'tpope/vim-surround'
 "Plugin 'Townk/vim-autoclose'
 
@@ -67,6 +67,17 @@ syntax enable
 "hi link _Comment Comment
 
 colorscheme blackboard
+
+function! GrayScale()
+    if g:colors_name == "paperA5"
+        colorscheme blackboard 
+    else
+        colorscheme paperA5 
+    endif
+endfunction
+
+command! Gray call GrayScale()
+
 " filetype on
 
 let g:user_emmet_install_global = 0
@@ -90,7 +101,7 @@ set laststatus=2
 " " now set it up to change the status line based on mode
 if version >= 700
   au InsertEnter * hi StatusLine ctermfg=0 ctermbg=110 
-  au InsertLeave * hi StatusLine ctermfg=15 ctermbg=245
+  au InsertLeave * hi StatusLine ctermfg=15 ctermbg=8
 endif
 
 set foldmethod=indent "syntax
@@ -116,8 +127,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-"let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_html_checkers = ['tidy']
+let g:syntastic_javascript_eslint_exec = '~/projects/LGI/onemw/onemw-js/node_modules/eslint/bin/eslint.js'
+
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syhtastic_html_checkers = ['tidy']
 
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_input_description = 1
@@ -142,4 +156,18 @@ nmap <C-Up> :res +15<CR>
 nmap <C-Down> :res -15<CR>
 nmap <C-Right> :vertical resize +25<CR>
 nmap <C-Left> :vertical resize -25<CR>
+
+
+
+"FuzzyFinder should ignore all files in .gitignore
+"let ignorefile = ".gitignore"
+"let ignore = '\v\~$'
+"if filereadable(ignorefile)
+    "for line in readfile(ignorefile)
+        "let line = substitute(line, '\.', '\\.', 'g')
+        "let line = substitute(line, '\*', '.*', 'g')
+        "let ignore .= '|^' . line
+    "endfor
+"endif
+"let g:fuf_file_exclude = ignore
 
